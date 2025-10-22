@@ -1,0 +1,8 @@
+{
+  "postsubmit": [
+    {
+      // aconfigd java utils test
+      "name": "aconfigd_java_utils_test"
+    }
+  ]
+}

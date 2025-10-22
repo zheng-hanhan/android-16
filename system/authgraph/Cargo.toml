@@ -1,0 +1,12 @@
+[workspace]
+members = [
+  "core",
+  "derive",
+  "wire",
+]
+resolver = "2"
+
+[patch.crates-io]
+authgraph_derive = { path = "derive" }
+authgraph_core = { path = "core" }
+authgraph_wire = { path = "wire" }

@@ -1,0 +1,1 @@
+../../../public_platform_nanoapp/chre/target_platform/platform_nanoapp_base.h

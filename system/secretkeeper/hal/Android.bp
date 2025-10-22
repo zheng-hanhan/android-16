@@ -1,0 +1,55 @@
+// Copyright 2023, The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package {
+    default_applicable_licenses: ["system_secretkeeper_license"],
+}
+
+rust_defaults {
+    name: "libsecretkeeper_hal_defaults",
+    crate_name: "secretkeeper_hal",
+    srcs: ["src/lib.rs"],
+    vendor_available: true,
+    defaults: [
+        "authgraph_use_latest_hal_aidl_rust",
+    ],
+    rustlibs: [
+        "libauthgraph_hal",
+        "libbinder_rs",
+        "libcoset",
+        "liblog_rust",
+        "libsecretkeeper_comm_nostd",
+    ],
+}
+
+rust_library {
+    name: "libsecretkeeper_hal",
+    defaults: [
+        "libsecretkeeper_hal_defaults",
+        "secretkeeper_use_latest_hal_aidl_rust",
+    ],
+    features: [
+        "hal_v2",
+    ],
+}
+
+rust_library {
+    name: "libsecretkeeper_hal_v1",
+    defaults: [
+        "libsecretkeeper_hal_defaults",
+    ],
+    rustlibs: [
+        "android.hardware.security.secretkeeper-V1-rust",
+    ],
+}

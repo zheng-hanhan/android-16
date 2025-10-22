@@ -1,0 +1,9 @@
+package: "android.mmd.flags"
+container: "system"
+
+flag {
+  name: "mmd_enabled"
+  namespace: "system_performance"
+  description: "This flag controls whether Memory Management Daemon is enabled"
+  bug: "370509309"
+}

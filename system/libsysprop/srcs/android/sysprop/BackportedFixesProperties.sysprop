@@ -1,0 +1,16 @@
+module: "android.sysprop.BackportedFixesProperties"
+owner: Platform
+
+# BitSet where the index of the bits are aliases for known issues that are backported and fixed on
+# the device.
+# Encoded as a long array containing a little-endian representation of a sequence of bits
+# as defined by java.util.BitSet.valueof(long[])
+#
+# The list 10,9 means alias 1,4,64 and 67 are fixed on this device.
+prop {
+    api_name: "alias_bitset"
+    type: LongList
+    scope: Public
+    access: Readonly
+    prop_name: "ro.build.backported_fixes.alias_bitset.long_list"
+}

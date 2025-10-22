@@ -1,0 +1,12 @@
+# Android Format Style
+
+edition = "2021"
+use_small_heuristics = "Max"
+newline_style = "Unix"
+
+# Unstable formatter features
+# This may break the codebase in the future rust update. Let kawasin@google.com know the breakage if
+# you find, or delete these breaking formatter features if the fix is too costy.
+
+imports_granularity = "item"
+group_imports = "StdExternalCrate"

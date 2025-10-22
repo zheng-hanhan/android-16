@@ -1,0 +1,44 @@
+service mmd /system/bin/mmd
+    class core
+    user mmd
+    group mmd system
+    critical
+    # For calling swapon syscall
+    capabilities SYS_ADMIN
+    disabled
+
+on boot
+    chown root mmd /sys/block/zram0/recompress
+    chmod 0220 /sys/block/zram0/recompress
+    chown root mmd /sys/block/zram0/writeback_limit
+    chmod 0664 /sys/block/zram0/writeback_limit
+
+    # /sys/block/zram0/idle and /sys/block/zram0/writeback are used by the
+    # system server managing zram writeback if mmd is disabled. This is
+    # duplicated as /system/core/rootdir/init.rc. But updating the same
+    # permission is safe to do.
+    chown root system /sys/block/zram0/idle
+    chmod 0220 /sys/block/zram0/idle
+    chown root system /sys/block/zram0/writeback
+    chmod 0220 /sys/block/zram0/writeback
+
+on property:sys.boot_completed=1
+    # Copy AConfig flag value to "mmd.enabled_aconfig" system property because
+    # AConfig flag does not support init "on property" trigger.
+    # mmd service starts only if AConfig flag is enabled when boot_completed.
+    # Copying the value on boot_completed once is enough because AConfig is
+    # static during a device lifetime.
+    exec /system/bin/mmd --set-property
+
+on property:mmd.enabled_aconfig=true
+    # Enable mmd daemon if the system property copied from AConfig flag by
+    # "/system/bin/mmd --set-property" is enabled.
+
+    # Zram setup requires permissions to the /dev/loop-control device and
+    # other zram sysfs files. Doing the setup as root to avoid granting mmd
+    # too many permissions for one time setup.
+    # This will be a no-op if mmd zram setup is disabled via system properties.
+    exec u:r:su:s0 root -- /system/bin/mmd --setup-zram
+
+    # Start mmd service after zram is set up.
+    enable mmd

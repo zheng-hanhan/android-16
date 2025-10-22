@@ -1,0 +1,21 @@
+{
+  "presubmit": [
+    {
+      "name": "hwservicemanager_test"
+    },
+    {
+      "name": "hidl_lazy_test"
+    },
+    {
+      "name": "CtsOsTestCases_cts_hwbindertest"
+    }
+  ],
+  "hwasan-presubmit": [
+    {
+      "name": "hwservicemanager_test"
+    },
+    {
+      "name": "hidl_lazy_test"
+    }
+  ]
+}

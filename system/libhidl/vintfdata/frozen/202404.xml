@@ -1,0 +1,76 @@
+<compatibility-matrix version="8.0" type="device">
+    <!--
+         cameraserver is installed for all phones and tablets, but not
+         auto, TV, or Wear.
+    -->
+    <hal format="aidl">
+        <name>android.frameworks.cameraservice.service</name>
+        <version>2</version>
+        <interface>
+            <name>ICameraService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.frameworks.location.altitude</name>
+        <version>2</version>
+        <interface>
+            <name>IAltitudeService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.frameworks.sensorservice</name>
+        <interface>
+            <name>ISensorManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.frameworks.stats</name>
+        <version>2</version>
+        <interface>
+            <name>IStats</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!--
+          vibrator is installed for all form factors except TV
+    -->
+    <hal format="aidl">
+        <name>android.frameworks.vibrator</name>
+        <interface>
+            <name>IVibratorControlService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.media.c2</name>
+        <interface>
+            <name>IComponentStore</name>
+            <instance>software</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.system.keystore2</name>
+        <version>4</version>
+        <interface>
+            <name>IKeystoreService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.system.net.netd</name>
+        <interface>
+            <name>INetd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>android.system.suspend</name>
+        <interface>
+            <name>ISystemSuspend</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

@@ -1,0 +1,1305 @@
+#
+# Copyright 2024, The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Telephony information related to time zone detection.
+#
+# This is a proto file in text format.
+#
+# The file is used to generate the on-device file used when picking
+# a time zone for an Android device.
+
+# networks:
+#
+# A set of networks which use an MCC+MNC combination but *do not* actually
+# operate in the country the MCC would suggest and therefore cause problems when
+# MCC is used for country detection. There is no need to enter networks that
+# operate in the country linked to the MCC. MCC+MNC combinations that operate
+# in multiple countries where the MCC country is one of them must also not be
+# entered here.
+#
+# The ordering of network elements is not important but is kept in ASCII
+# order by MCC and MNC, then country ISO code for easier maintenance.
+# There must only be one network element per MCC+MNC combination.
+
+# Network:
+#
+# mcc:
+# The Mobile Country Code.
+#
+# mnc:
+# The Mobile Network Code.
+#
+# countryIsoCode:
+# The (lower cased) ISO 3166 2-character country code. Must be a known valid code.
+
+networks:<
+  # DOCOMO PACIFIC http://b/117863016
+  mcc: "310"
+  mnc: "370"
+  countryIsoCode: "gu"
+>
+
+networks:<
+  # DOCOMO PACIFIC http://b/210384434
+  mcc: "310"
+  mnc: "470"
+  countryIsoCode: "gu"
+>
+
+networks:<
+  # American Samoa Telecommunications ASTCA  http://b/328151581
+  mcc: "311"
+  mnc: "780"
+  countryIsoCode: "as"
+>
+
+# Countries / regions by Mobile Country Code (MCC).
+#
+# The table below is built from three main resources:
+# 1) ITU "LIST OF MOBILE COUNTRY OR GEOGRAPHICAL AREA CODES (POSITION ON 1 FEBRUARY 2017)"
+#    available here: http://handle.itu.int/11.1002/pub/80f1788f-en
+# 2) The ISO 3166 country codes list, available here:
+#    https://www.iso.org/iso-3166-country-codes.html
+# 3) Android fine-tuning based on observations and reported errors
+#
+# This table may not be completely accurate.
+#
+# Entries are sorted by MCC (Asc). For MCCs that cover multiple countryIsoCodes, the first
+# ISO code is considered "default" (often the one with the largest population).
+
+mobile_countries:<
+    mcc: "202"
+    countryIsoCodes: "gr" # Greece
+>
+
+mobile_countries:<
+    mcc: "204"
+    countryIsoCodes: "nl" # Netherlands (Kingdom of the)
+>
+
+mobile_countries:<
+    mcc: "206"
+    countryIsoCodes: "be" # Belgium
+>
+
+mobile_countries:<
+    mcc: "208"
+    countryIsoCodes: "fr" # France
+>
+
+mobile_countries:<
+    mcc: "212"
+    countryIsoCodes: "mc" # Monaco (Principality of)
+>
+
+mobile_countries:<
+    mcc: "213"
+    countryIsoCodes: "ad" # Andorra (Principality of)
+>
+
+mobile_countries:<
+    mcc: "214"
+    countryIsoCodes: "es" # Spain
+>
+
+mobile_countries:<
+    mcc: "216"
+    countryIsoCodes: "hu" # Hungary (Republic of)
+>
+
+mobile_countries:<
+    mcc: "218"
+    countryIsoCodes: "ba" # Bosnia and Herzegovina
+>
+
+mobile_countries:<
+    mcc: "219"
+    countryIsoCodes: "hr" # Croatia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "220"
+    countryIsoCodes: "rs" # Serbia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "221"
+    countryIsoCodes: "xk" # Kosovo
+>
+
+mobile_countries:<
+    mcc: "222"
+    countryIsoCodes: "it" # Italy
+>
+
+mobile_countries:<
+    mcc: "225"
+    countryIsoCodes: "va" # Vatican City State
+>
+
+mobile_countries:<
+    mcc: "226"
+    countryIsoCodes: "ro" # Romania
+>
+
+mobile_countries:<
+    mcc: "228"
+    countryIsoCodes: "ch" # Switzerland (Confederation of)
+>
+
+mobile_countries:<
+    mcc: "230"
+    countryIsoCodes: "cz" # Czechia
+>
+
+mobile_countries:<
+    mcc: "231"
+    countryIsoCodes: "sk" # Slovak Republic
+>
+
+mobile_countries:<
+    mcc: "232"
+    countryIsoCodes: "at" # Austria
+>
+
+mobile_countries:<
+    mcc: "234"
+    countryIsoCodes: "gb" # United Kingdom of Great Britain and Northern Ireland
+
+    # Same UTC offset as "gb"
+    # countryIsoCodes: "gg" # Guernsey
+    # countryIsoCodes: "im" # Isle of Man
+    # countryIsoCodes: "je" # Jersey
+>
+
+mobile_countries:<
+    mcc: "235"
+    countryIsoCodes: "gb" # United Kingdom of Great Britain and Northern Ireland
+>
+
+mobile_countries:<
+    mcc: "238"
+    countryIsoCodes: "dk" # Denmark
+>
+
+mobile_countries:<
+    mcc: "240"
+    countryIsoCodes: "se" # Sweden
+>
+
+mobile_countries:<
+    mcc: "242"
+    countryIsoCodes: "no" # Norway
+>
+
+mobile_countries:<
+    mcc: "244"
+    countryIsoCodes: "fi" # Finland
+>
+
+mobile_countries:<
+    mcc: "246"
+    countryIsoCodes: "lt" # Lithuania (Republic of)
+>
+
+mobile_countries:<
+    mcc: "247"
+    countryIsoCodes: "lv" # Latvia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "248"
+    countryIsoCodes: "ee" # Estonia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "250"
+    countryIsoCodes: "ru" # Russian Federation
+>
+
+mobile_countries:<
+    mcc: "255"
+    countryIsoCodes: "ua" # Ukraine
+>
+
+mobile_countries:<
+    mcc: "257"
+    countryIsoCodes: "by" # Belarus (Republic of)
+>
+
+mobile_countries:<
+    mcc: "259"
+    countryIsoCodes: "md" # Moldova (Republic of)
+>
+
+mobile_countries:<
+    mcc: "260"
+    countryIsoCodes: "pl" # Poland (Republic of)
+>
+
+mobile_countries:<
+    mcc: "262"
+    countryIsoCodes: "de" # Germany (Federal Republic of)
+>
+
+mobile_countries:<
+    mcc: "266"
+    countryIsoCodes: "gi" # Gibraltar
+>
+
+mobile_countries:<
+    mcc: "268"
+    countryIsoCodes: "pt" # Portugal
+>
+
+mobile_countries:<
+    mcc: "270"
+    countryIsoCodes: "lu" # Luxembourg
+>
+
+mobile_countries:<
+    mcc: "272"
+    countryIsoCodes: "ie" # Ireland
+>
+
+mobile_countries:<
+    mcc: "274"
+    countryIsoCodes: "is" # Iceland
+>
+
+mobile_countries:<
+    mcc: "276"
+    countryIsoCodes: "al" # Albania (Republic of)
+>
+
+mobile_countries:<
+    mcc: "278"
+    countryIsoCodes: "mt" # Malta
+>
+
+mobile_countries:<
+    mcc: "280"
+    countryIsoCodes: "cy" # Cyprus (Republic of)
+>
+
+mobile_countries:<
+    mcc: "282"
+    countryIsoCodes: "ge" # Georgia
+>
+
+mobile_countries:<
+    mcc: "283"
+    countryIsoCodes: "am" # Armenia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "284"
+    countryIsoCodes: "bg" # Bulgaria (Republic of)
+>
+
+mobile_countries:<
+    mcc: "286"
+    countryIsoCodes: "tr" # Turkey
+>
+
+mobile_countries:<
+    mcc: "288"
+    countryIsoCodes: "fo" # Faroe Islands
+>
+
+mobile_countries:<
+    mcc: "289"
+    countryIsoCodes: "ge" # Abkhazia (Georgia)
+>
+
+mobile_countries:<
+    mcc: "290"
+    countryIsoCodes: "gl" # Greenland (Denmark)
+>
+
+mobile_countries:<
+    mcc: "292"
+    countryIsoCodes: "sm" # San Marino (Republic of)
+>
+
+mobile_countries:<
+    mcc: "293"
+    countryIsoCodes: "si" # Slovenia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "294"
+    countryIsoCodes: "mk" # The Former Yugoslav Republic of Macedonia
+>
+
+mobile_countries:<
+    mcc: "295"
+    countryIsoCodes: "li" # Liechtenstein (Principality of)
+>
+
+mobile_countries:<
+    mcc: "297"
+    countryIsoCodes: "me" # Montenegro
+>
+
+mobile_countries:<
+    mcc: "302"
+    countryIsoCodes: "ca" # Canada
+>
+
+mobile_countries:<
+    mcc: "308"
+    countryIsoCodes: "pm" # Saint Pierre and Miquelon
+>
+
+mobile_countries:<
+    mcc: "310"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "311"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "312"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "313"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "314"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "315"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "316"
+    countryIsoCodes: "us" # United States of America
+>
+
+mobile_countries:<
+    mcc: "330"
+    countryIsoCodes: "pr" # Puerto Rico
+>
+
+mobile_countries:<
+    mcc: "332"
+    countryIsoCodes: "vi" # United States Virgin Islands
+>
+
+mobile_countries:<
+    mcc: "334"
+    countryIsoCodes: "mx" # Mexico
+>
+
+mobile_countries:<
+    mcc: "338"
+    countryIsoCodes: "jm" # Jamaica
+>
+
+mobile_countries:<
+    mcc: "340"
+    countryIsoCodes: "gp" # Default: Guadeloupe
+
+    countryIsoCodes: "gf" # French Guiana
+
+    # Same UTC offset as "gp"
+    # countryIsoCodes: "bl" # Saint Barthélemy
+    # countryIsoCodes: "mf" # Collectivity of Saint Martin
+    # countryIsoCodes: "mq" # Martinique
+>
+
+mobile_countries:<
+    mcc: "342"
+    countryIsoCodes: "bb" # Barbados
+>
+
+mobile_countries:<
+    mcc: "344"
+    countryIsoCodes: "ag" # Antigua and Barbuda
+>
+
+mobile_countries:<
+    mcc: "346"
+    countryIsoCodes: "ky" # Cayman Islands
+>
+
+mobile_countries:<
+    mcc: "348"
+    countryIsoCodes: "vg" # British Virgin Islands
+>
+
+mobile_countries:<
+    mcc: "350"
+    countryIsoCodes: "bm" # Bermuda
+>
+
+mobile_countries:<
+    mcc: "352"
+    countryIsoCodes: "gd" # Grenada
+>
+
+mobile_countries:<
+    mcc: "354"
+    countryIsoCodes: "ms" # Montserrat
+>
+
+mobile_countries:<
+    mcc: "356"
+    countryIsoCodes: "kn" # Saint Kitts and Nevis
+>
+
+mobile_countries:<
+    mcc: "358"
+    countryIsoCodes: "lc" # Saint Lucia
+>
+
+mobile_countries:<
+    mcc: "360"
+    countryIsoCodes: "vc" # Saint Vincent and the Grenadines
+>
+
+mobile_countries:<
+    mcc: "362"
+    countryIsoCodes: "cw" # Default: Curaçao
+
+    # Same UTC offset as "cw"
+    # countryIsoCodes: "bq" # Caribbean Netherlands
+    # countryIsoCodes: "sx" # Sint Maarten
+>
+
+mobile_countries:<
+    mcc: "363"
+    countryIsoCodes: "aw" # Aruba
+>
+
+mobile_countries:<
+    mcc: "364"
+    countryIsoCodes: "bs" # Bahamas (Commonwealth of the)
+>
+
+mobile_countries:<
+    mcc: "365"
+    countryIsoCodes: "ai" # Anguilla
+>
+
+mobile_countries:<
+    mcc: "366"
+    countryIsoCodes: "dm" # Dominica (Commonwealth of)
+>
+
+mobile_countries:<
+    mcc: "368"
+    countryIsoCodes: "cu" # Cuba
+>
+
+mobile_countries:<
+    mcc: "370"
+    countryIsoCodes: "do" # Dominican Republic
+>
+
+mobile_countries:<
+    mcc: "372"
+    countryIsoCodes: "ht" # Haiti (Republic of)
+>
+
+mobile_countries:<
+    mcc: "374"
+    countryIsoCodes: "tt" # Trinidad and Tobago
+>
+
+mobile_countries:<
+    mcc: "376"
+    countryIsoCodes: "tc" # Turks and Caicos Islands
+>
+
+mobile_countries:<
+    mcc: "400"
+    countryIsoCodes: "az" # Azerbaijani Republic
+>
+
+mobile_countries:<
+    mcc: "401"
+    countryIsoCodes: "kz" # Kazakhstan (Republic of)
+>
+
+mobile_countries:<
+    mcc: "402"
+    countryIsoCodes: "bt" # Bhutan (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "404"
+    countryIsoCodes: "in" # India (Republic of)
+>
+
+mobile_countries:<
+    mcc: "405"
+    countryIsoCodes: "in" # India (Republic of)
+>
+
+mobile_countries:<
+    mcc: "406"
+    countryIsoCodes: "in" # India (Republic of)
+>
+
+mobile_countries:<
+    mcc: "410"
+    countryIsoCodes: "pk" # Pakistan (Islamic Republic of)
+>
+
+mobile_countries:<
+    mcc: "412"
+    countryIsoCodes: "af" # Afghanistan
+>
+
+mobile_countries:<
+    mcc: "413"
+    countryIsoCodes: "lk" # Sri Lanka (Democratic Socialist Republic of)
+>
+
+mobile_countries:<
+    mcc: "414"
+    countryIsoCodes: "mm" # Myanmar (the Republic of the Union of)
+>
+
+mobile_countries:<
+    mcc: "415"
+    countryIsoCodes: "lb" # Lebanon
+>
+
+mobile_countries:<
+    mcc: "416"
+    countryIsoCodes: "jo" # Jordan (Hashemite Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "417"
+    countryIsoCodes: "sy" # Syrian Arab Republic
+>
+
+mobile_countries:<
+    mcc: "418"
+    countryIsoCodes: "iq" # Iraq (Republic of)
+>
+
+mobile_countries:<
+    mcc: "419"
+    countryIsoCodes: "kw" # Kuwait (State of)
+>
+
+mobile_countries:<
+    mcc: "420"
+    countryIsoCodes: "sa" # Saudi Arabia (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "421"
+    countryIsoCodes: "ye" # Yemen (Republic of)
+>
+
+mobile_countries:<
+    mcc: "422"
+    countryIsoCodes: "om" # Oman (Sultanate of)
+>
+
+mobile_countries:<
+    mcc: "423"
+    countryIsoCodes: "ps" # Palestine
+>
+
+mobile_countries:<
+    mcc: "424"
+    countryIsoCodes: "ae" # United Arab Emirates
+>
+
+mobile_countries:<
+    mcc: "425"
+    countryIsoCodes: "il" # Israel (State of)
+>
+
+mobile_countries:<
+    mcc: "426"
+    countryIsoCodes: "bh" # Bahrain (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "427"
+    countryIsoCodes: "qa" # Qatar (State of)
+>
+
+mobile_countries:<
+    mcc: "428"
+    countryIsoCodes: "mn" # Mongolia
+>
+
+mobile_countries:<
+    mcc: "429"
+    countryIsoCodes: "np" # Nepal (Federal Democratic Republic of)
+>
+
+mobile_countries:<
+    mcc: "430"
+    countryIsoCodes: "ae" # United Arab Emirates
+>
+
+mobile_countries:<
+    mcc: "431"
+    countryIsoCodes: "ae" # United Arab Emirates
+>
+
+mobile_countries:<
+    mcc: "432"
+    countryIsoCodes: "ir" # Iran (Islamic Republic of)
+>
+
+mobile_countries:<
+    mcc: "434"
+    countryIsoCodes: "uz" # Uzbekistan (Republic of)
+>
+
+mobile_countries:<
+    mcc: "436"
+    countryIsoCodes: "tj" # Tajikistan (Republic of)
+>
+
+mobile_countries:<
+    mcc: "437"
+    countryIsoCodes: "kg" # Kyrgyz Republic
+>
+
+mobile_countries:<
+    mcc: "438"
+    countryIsoCodes: "tm" # Turkmenistan
+>
+
+mobile_countries:<
+    mcc: "440"
+    countryIsoCodes: "jp" # Japan
+>
+
+mobile_countries:<
+    mcc: "441"
+    countryIsoCodes: "jp" # Japan
+>
+
+mobile_countries:<
+    mcc: "450"
+    countryIsoCodes: "kr" # Korea (Republic of)
+>
+
+mobile_countries:<
+    mcc: "452"
+    countryIsoCodes: "vn" # Viet Nam (Socialist Republic of)
+>
+
+mobile_countries:<
+    mcc: "454"
+    countryIsoCodes: "hk" # Hong Kong, China
+>
+
+mobile_countries:<
+    mcc: "455"
+    countryIsoCodes: "mo" # Macao, China
+>
+
+mobile_countries:<
+    mcc: "456"
+    countryIsoCodes: "kh" # Cambodia (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "457"
+    countryIsoCodes: "la" # Lao People's Democratic Republic
+>
+
+mobile_countries:<
+    mcc: "460"
+    countryIsoCodes: "cn" # China (People's Republic of)
+>
+
+mobile_countries:<
+    mcc: "461"
+    countryIsoCodes: "cn" # China (People's Republic of)
+>
+
+mobile_countries:<
+    mcc: "466"
+    countryIsoCodes: "tw" # Taiwan, China
+>
+
+mobile_countries:<
+    mcc: "467"
+    countryIsoCodes: "kp" # Democratic People's Republic of Korea
+>
+
+mobile_countries:<
+    mcc: "470"
+    countryIsoCodes: "bd" # Bangladesh (People's Republic of)
+>
+
+mobile_countries:<
+    mcc: "472"
+    countryIsoCodes: "mv" # Maldives (Republic of)
+>
+
+mobile_countries:<
+    mcc: "502"
+    countryIsoCodes: "my" # Malaysia
+>
+
+mobile_countries:<
+    mcc: "505"
+    countryIsoCodes: "au" # Default: Australia
+
+    countryIsoCodes: "nf" # Norfolk Island
+>
+
+mobile_countries:<
+    mcc: "510"
+    countryIsoCodes: "id" # Indonesia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "514"
+    countryIsoCodes: "tl" # Timor-Leste (Democratic Republic of)
+>
+
+mobile_countries:<
+    mcc: "515"
+    countryIsoCodes: "ph" # Philippines (Republic of the)
+>
+
+mobile_countries:<
+    mcc: "520"
+    countryIsoCodes: "th" # Thailand
+>
+
+mobile_countries:<
+    mcc: "525"
+    countryIsoCodes: "sg" # Singapore (Republic of)
+>
+
+mobile_countries:<
+    mcc: "528"
+    countryIsoCodes: "bn" # Brunei Darussalam
+>
+
+mobile_countries:<
+    mcc: "530"
+    countryIsoCodes: "nz" # New Zealand
+>
+
+mobile_countries:<
+    mcc: "534"
+    countryIsoCodes: "mp" # Northern Mariana Islands (Commonwealth of the)
+>
+
+mobile_countries:<
+    mcc: "535"
+    countryIsoCodes: "gu" # Guam (*)
+>
+
+mobile_countries:<
+    mcc: "536"
+    countryIsoCodes: "nr" # Nauru (Republic of)
+>
+
+mobile_countries:<
+    mcc: "537"
+    countryIsoCodes: "pg" # Papua New Guinea
+>
+
+mobile_countries:<
+    mcc: "539"
+    countryIsoCodes: "to" # Tonga (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "540"
+    countryIsoCodes: "sb" # Solomon Islands
+>
+
+mobile_countries:<
+    mcc: "541"
+    countryIsoCodes: "vu" # Vanuatu (Republic of)
+>
+
+mobile_countries:<
+    mcc: "542"
+    countryIsoCodes: "fj" # Fiji (Republic of)
+>
+
+mobile_countries:<
+    mcc: "543"
+    countryIsoCodes: "wf" # Wallis and Futuna
+>
+
+mobile_countries:<
+    mcc: "544"
+    countryIsoCodes: "as" # American Samoa
+>
+
+mobile_countries:<
+    mcc: "545"
+    countryIsoCodes: "ki" # Kiribati (Republic of)
+>
+
+mobile_countries:<
+    mcc: "546"
+    countryIsoCodes: "nc" # New Caledonia
+>
+
+mobile_countries:<
+    mcc: "547"
+    countryIsoCodes: "pf" # French Polynesia
+>
+
+mobile_countries:<
+    mcc: "548"
+    countryIsoCodes: "ck" # Cook Islands
+>
+
+mobile_countries:<
+    mcc: "549"
+    countryIsoCodes: "ws" # Samoa (Independent State of)
+>
+
+mobile_countries:<
+    mcc: "550"
+    countryIsoCodes: "fm" # Micronesia (Federated States of)
+>
+
+mobile_countries:<
+    mcc: "551"
+    countryIsoCodes: "mh" # Marshall Islands (Republic of the)
+>
+
+mobile_countries:<
+    mcc: "552"
+    countryIsoCodes: "pw" # Palau (Republic of)
+>
+
+mobile_countries:<
+    mcc: "553"
+    countryIsoCodes: "tv" # Tuvalu
+>
+
+mobile_countries:<
+    mcc: "554"
+    countryIsoCodes: "tk" # Tokelau
+>
+
+mobile_countries:<
+    mcc: "555"
+    countryIsoCodes: "nu" # Niue
+>
+
+mobile_countries:<
+    mcc: "602"
+    countryIsoCodes: "eg" # Egypt (Arab Republic of)
+>
+
+mobile_countries:<
+    mcc: "603"
+    countryIsoCodes: "dz" # Algeria (People's Democratic Republic of)
+>
+
+mobile_countries:<
+    mcc: "604"
+    countryIsoCodes: "ma" # Morocco (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "605"
+    countryIsoCodes: "tn" # Tunisia
+>
+
+mobile_countries:<
+    mcc: "606"
+    countryIsoCodes: "ly" # Libya
+>
+
+mobile_countries:<
+    mcc: "607"
+    countryIsoCodes: "gm" # Gambia (Republic of the)
+>
+
+mobile_countries:<
+    mcc: "608"
+    countryIsoCodes: "sn" # Senegal (Republic of)
+>
+
+mobile_countries:<
+    mcc: "609"
+    countryIsoCodes: "mr" # Mauritania (Islamic Republic of)
+>
+
+mobile_countries:<
+    mcc: "610"
+    countryIsoCodes: "ml" # Mali (Republic of)
+>
+
+mobile_countries:<
+    mcc: "611"
+    countryIsoCodes: "gn" # Guinea (Republic of)
+>
+
+mobile_countries:<
+    mcc: "612"
+    countryIsoCodes: "ci" # Côte d'Ivoire (Republic of)
+>
+
+mobile_countries:<
+    mcc: "613"
+    countryIsoCodes: "bf" # Burkina Faso
+>
+
+mobile_countries:<
+    mcc: "614"
+    countryIsoCodes: "ne" # Niger (Republic of the)
+>
+
+mobile_countries:<
+    mcc: "615"
+    countryIsoCodes: "tg" # Togolese Republic
+>
+
+mobile_countries:<
+    mcc: "616"
+    countryIsoCodes: "bj" # Benin (Republic of)
+>
+
+mobile_countries:<
+    mcc: "617"
+    countryIsoCodes: "mu" # Mauritius (Republic of)
+>
+
+mobile_countries:<
+    mcc: "618"
+    countryIsoCodes: "lr" # Liberia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "619"
+    countryIsoCodes: "sl" # Sierra Leone
+>
+
+mobile_countries:<
+    mcc: "620"
+    countryIsoCodes: "gh" # Ghana
+>
+
+mobile_countries:<
+    mcc: "621"
+    countryIsoCodes: "ng" # Nigeria (Federal Republic of)
+>
+
+mobile_countries:<
+    mcc: "622"
+    countryIsoCodes: "td" # Chad (Republic of)
+>
+
+mobile_countries:<
+    mcc: "623"
+    countryIsoCodes: "cf" # Central African Republic
+>
+
+mobile_countries:<
+    mcc: "624"
+    countryIsoCodes: "cm" # Cameroon (Republic of)
+>
+
+mobile_countries:<
+    mcc: "625"
+    countryIsoCodes: "cv" # Cape Verde (Republic of)
+>
+
+mobile_countries:<
+    mcc: "626"
+    countryIsoCodes: "st" # Sao Tome and Principe (Democratic Republic of)
+>
+
+mobile_countries:<
+    mcc: "627"
+    countryIsoCodes: "gq" # Equatorial Guinea (Republic of)
+>
+
+mobile_countries:<
+    mcc: "628"
+    countryIsoCodes: "ga" # Gabonese Republic
+>
+
+mobile_countries:<
+    mcc: "629"
+    countryIsoCodes: "cg" # Congo (Republic of the)
+>
+
+mobile_countries:<
+    mcc: "630"
+    countryIsoCodes: "cd" # Democratic Republic of the Congo
+>
+
+mobile_countries:<
+    mcc: "631"
+    countryIsoCodes: "ao" # Angola (Republic of)
+>
+
+mobile_countries:<
+    mcc: "632"
+    countryIsoCodes: "gw" # Guinea-Bissau (Republic of)
+>
+
+mobile_countries:<
+    mcc: "633"
+    countryIsoCodes: "sc" # Seychelles (Republic of)
+>
+
+mobile_countries:<
+    mcc: "634"
+    countryIsoCodes: "sd" # Sudan (Republic of the)
+>
+
+mobile_countries:<
+    mcc: "635"
+    countryIsoCodes: "rw" # Rwanda (Republic of)
+>
+
+mobile_countries:<
+    mcc: "636"
+    countryIsoCodes: "et" # Ethiopia (Federal Democratic Republic of)
+>
+
+mobile_countries:<
+    mcc: "637"
+    countryIsoCodes: "so" # Somali Democratic Republic
+>
+
+mobile_countries:<
+    mcc: "638"
+    countryIsoCodes: "dj" # Djibouti (Republic of)
+>
+
+mobile_countries:<
+    mcc: "639"
+    countryIsoCodes: "ke" # Kenya (Republic of)
+>
+
+mobile_countries:<
+    mcc: "640"
+    countryIsoCodes: "tz" # Tanzania (United Republic of)
+>
+
+mobile_countries:<
+    mcc: "641"
+    countryIsoCodes: "ug" # Uganda (Republic of)
+>
+
+mobile_countries:<
+    mcc: "642"
+    countryIsoCodes: "bi" # Burundi (Republic of)
+>
+
+mobile_countries:<
+    mcc: "643"
+    countryIsoCodes: "mz" # Mozambique (Republic of)
+>
+
+mobile_countries:<
+    mcc: "645"
+    countryIsoCodes: "zm" # Zambia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "646"
+    countryIsoCodes: "mg" # Madagascar (Republic of)
+>
+
+mobile_countries:<
+    mcc: "647"
+    countryIsoCodes: "re" # Default: Reunion
+
+    countryIsoCodes: "yt" # Mayotte
+>
+
+mobile_countries:<
+    mcc: "648"
+    countryIsoCodes: "zw" # Zimbabwe (Republic of)
+>
+
+mobile_countries:<
+    mcc: "649"
+    countryIsoCodes: "na" # Namibia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "650"
+    countryIsoCodes: "mw" # Malawi
+>
+
+mobile_countries:<
+    mcc: "651"
+    countryIsoCodes: "ls" # Lesotho (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "652"
+    countryIsoCodes: "bw" # Botswana (Republic of)
+>
+
+mobile_countries:<
+    mcc: "653"
+    countryIsoCodes: "sz" # Swaziland (Kingdom of)
+>
+
+mobile_countries:<
+    mcc: "654"
+    countryIsoCodes: "km" # Comoros (Union of the)
+>
+
+mobile_countries:<
+    mcc: "655"
+    countryIsoCodes: "za" # South Africa (Republic of)
+>
+
+mobile_countries:<
+    mcc: "657"
+    countryIsoCodes: "er" # Eritrea
+>
+
+mobile_countries:<
+    mcc: "658"
+    countryIsoCodes: "sh" # Saint Helena, Ascension and Tristan da Cunha
+>
+
+mobile_countries:<
+    mcc: "659"
+    countryIsoCodes: "ss" # South Sudan (Republic of)
+>
+
+mobile_countries:<
+    mcc: "702"
+    countryIsoCodes: "bz" # Belize
+>
+
+mobile_countries:<
+    mcc: "704"
+    countryIsoCodes: "gt" # Guatemala (Republic of)
+>
+
+mobile_countries:<
+    mcc: "706"
+    countryIsoCodes: "sv" # El Salvador (Republic of)
+>
+
+mobile_countries:<
+    mcc: "708"
+    countryIsoCodes: "hn" # Honduras (Republic of)
+>
+
+mobile_countries:<
+    mcc: "710"
+    countryIsoCodes: "ni" # Nicaragua
+>
+
+mobile_countries:<
+    mcc: "712"
+    countryIsoCodes: "cr" # Costa Rica
+>
+
+mobile_countries:<
+    mcc: "714"
+    countryIsoCodes: "pa" # Panama (Republic of)
+>
+
+mobile_countries:<
+    mcc: "716"
+    countryIsoCodes: "pe" # Peru
+>
+
+mobile_countries:<
+    mcc: "722"
+    countryIsoCodes: "ar" # Argentine Republic
+>
+
+mobile_countries:<
+    mcc: "724"
+    countryIsoCodes: "br" # Brazil (Federative Republic of)
+>
+
+mobile_countries:<
+    mcc: "730"
+    countryIsoCodes: "cl" # Chile
+>
+
+mobile_countries:<
+    mcc: "732"
+    countryIsoCodes: "co" # Colombia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "734"
+    countryIsoCodes: "ve" # Venezuela (Bolivarian Republic of)
+>
+
+mobile_countries:<
+    mcc: "736"
+    countryIsoCodes: "bo" # Bolivia (Republic of)
+>
+
+mobile_countries:<
+    mcc: "738"
+    countryIsoCodes: "gy" # Guyana
+>
+
+mobile_countries:<
+    mcc: "740"
+    countryIsoCodes: "ec" # Ecuador
+>
+
+mobile_countries:<
+    mcc: "742"
+    countryIsoCodes: "gf" # French Guiana
+>
+
+mobile_countries:<
+    mcc: "744"
+    countryIsoCodes: "py" # Paraguay (Republic of)
+>
+
+mobile_countries:<
+    mcc: "746"
+    countryIsoCodes: "sr" # Suriname (Republic of)
+>
+
+mobile_countries:<
+    mcc: "748"
+    countryIsoCodes: "uy" # Uruguay (Eastern Republic of)
+>
+
+mobile_countries:<
+    mcc: "750"
+    countryIsoCodes: "fk" # Falkland Islands (Malvinas)
+>

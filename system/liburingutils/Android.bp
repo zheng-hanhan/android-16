@@ -1,0 +1,60 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library {
+    name: "liburingutils",
+
+    srcs: [
+        "src/IOUringSocketHandler.cpp",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    export_include_dirs: ["include"],
+
+    static_libs: [
+        "liburing",
+    ],
+    shared_libs: [
+        "libbase",
+        "liblog",
+    ],
+
+    tidy: true,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+    tidy_checks_as_errors: [
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+
+    min_sdk_version: "30",
+
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.os.statsd",
+    ],
+}
+
+cc_test {
+    name: "IOUringSocketHandler_tests",
+    test_suites: ["device-tests"],
+    srcs: [
+        "src/IOUringSocketHandler_test.cpp",
+    ],
+    static_libs: [
+        "liburing",
+        "liburingutils",
+        "libbase",
+        "liblog",
+    ],
+}

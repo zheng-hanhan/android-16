@@ -1,0 +1,27 @@
+{
+  "presubmit": [
+    {
+      "name": "libvintf_test"
+    },
+    {
+      "name": "vintf_object_test"
+    },
+    {
+      "name": "lshal_test"
+    },
+    {
+      "name": "vts_halManifest_validate_test"
+    }
+  ],
+  "hwasan-presubmit": [
+    {
+      "name": "libvintf_test"
+    },
+    {
+      "name": "vintf_object_test"
+    },
+    {
+      "name": "lshal_test"
+    }
+  ]
+}

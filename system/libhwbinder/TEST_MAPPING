@@ -1,0 +1,13 @@
+{
+  "presubmit": [
+    {
+      "name": "libbinderthreadstateutils_test"
+    },
+    {
+      "name": "SettingsGoogleUnitTests"
+    },
+    {
+      "name": "CtsOsTestCases_cts_hwbindertest"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "postsubmit": [
+    {
+      "name": "MicrodroidHostTestCases"
+    },
+    {
+      "name": "MicrodroidTestApp"
+    },
+    {
+      "name": "VtsSecretkeeperTargetTest"
+    },
+    {
+      "name": "libdice_policy.test"
+    },
+    {
+      "name": "libexplicitkeydice.test"
+    },
+    {
+      "name": "libsecretkeeper_comm.test"
+    },
+    {
+      "name": "libsecretkeeper_core_test"
+    }
+  ]
+}

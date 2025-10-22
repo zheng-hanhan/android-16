@@ -1,0 +1,18 @@
+[package]
+name = "alloctop"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+name = "alloctop"
+crate-type = ["lib"]
+
+[[bin]]
+name = "alloctop"
+path = "src/main.rs"
+
+[dependencies]
+libc = "0.2.169"
+
+[dev-dependencies]
+tempfile = "3"

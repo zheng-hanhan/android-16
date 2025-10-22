@@ -1,0 +1,101 @@
+<compatibility-matrix version="9.0" type="device">
+    <!--
+         cameraserver is installed for all phones and tablets, but not
+         auto, TV, or Wear.
+    -->
+    <hal format="aidl" optional="true">
+        <name>android.frameworks.cameraservice.service</name>
+        <version>3</version>
+        <interface>
+            <name>ICameraService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.frameworks.devicestate</name>
+        <interface>
+            <name>IDeviceStateService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.frameworks.location.altitude</name>
+        <version>2</version>
+        <interface>
+            <name>IAltitudeService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.frameworks.sensorservice</name>
+        <interface>
+            <name>ISensorManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.frameworks.stats</name>
+        <version>2</version>
+        <interface>
+            <name>IStats</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!--
+          vibrator is installed for all form factors except TV
+    -->
+    <hal format="aidl" optional="true">
+        <name>android.frameworks.vibrator</name>
+        <interface>
+            <name>IVibratorControlService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.hardware.media.c2</name>
+        <interface>
+            <name>IComponentStore</name>
+            <instance>software</instance>
+        </interface>
+    </hal>
+    <!--
+          keymint is not typically installed in the framework manifest
+    -->
+    <hal format="aidl" optional="true">
+        <name>android.hardware.security.keymint</name>
+        <version>3</version>
+        <interface>
+            <name>IRemotelyProvisionedComponent</name>
+            <instance>avf</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.system.keystore2</name>
+        <version>5</version>
+        <interface>
+            <name>IKeystoreService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.system.net.netd</name>
+        <interface>
+            <name>INetd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.system.suspend</name>
+        <interface>
+            <name>ISystemSuspend</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+        <name>android.system.vold</name>
+        <interface>
+            <name>IVold</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

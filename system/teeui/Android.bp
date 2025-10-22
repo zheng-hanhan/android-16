@@ -1,0 +1,5 @@
+dirgroup {
+    name: "trusty_dirgroup_system_teeui",
+    dirs: ["."],
+    visibility: ["//trusty/vendor/google/aosp/scripts"],
+}
